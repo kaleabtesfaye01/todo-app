@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "7X/NAFyuNxA=",
+  "success": true,
+  "projectFilePath": "/Users/kaleabalemu/CursorProjects/todo-app/backend/TodoApi.csproj",
+  "expectedPackageFiles": [
+    "/Users/kaleabalemu/.nuget/packages/microsoft.aspnetcore.openapi/9.0.3/microsoft.aspnetcore.openapi.9.0.3.nupkg.sha512",
+    "/Users/kaleabalemu/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}

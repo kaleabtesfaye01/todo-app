@@ -1,0 +1,43 @@
+<div class="todo-form">
+  <h2>{{ isEditMode ? 'Edit Todo' : 'Create New Todo' }}</h2>
+  <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input
+        type="text"
+        id="title"
+        formControlName="title"
+        class="form-control"
+        [class.is-invalid]="title.invalid && (title.dirty || title.touched)"
+      >
+      <div class="invalid-feedback" *ngIf="title.invalid && (title.dirty || title.touched)">
+        <span *ngIf="title.errors?.['required']">Title is required</span>
+        <span *ngIf="title.errors?.['minlength']">Title must be at least 3 characters</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea
+        id="description"
+        formControlName="description"
+        class="form-control"
+        rows="3"
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label class="checkbox-label">
+        <input type="checkbox" formControlName="completed">
+        Mark as completed
+      </label>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" class="cancel-button" (click)="onCancel()">Cancel</button>
+      <button type="submit" class="submit-button" [disabled]="todoForm.invalid">
+        {{ isEditMode ? 'Update' : 'Create' }}
+      </button>
+    </div>
+  </form>
+</div>

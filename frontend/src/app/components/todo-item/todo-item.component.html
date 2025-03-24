@@ -1,0 +1,22 @@
+<div class="todo-item" [class.completed]="todo.completed">
+  <div class="todo-content">
+    <input
+      type="checkbox"
+      [checked]="todo.completed"
+      (change)="onStatusChange()"
+      class="todo-checkbox"
+    >
+    <div class="todo-text">
+      <h3>{{ todo.title }}</h3>
+      <p *ngIf="todo.description">{{ todo.description }}</p>
+      <div class="todo-meta">
+        <span>Created: {{ todo.createdAt | date:'short' }}</span>
+        <span>Updated: {{ todo.updatedAt | date:'short' }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="todo-actions">
+    <button (click)="onEdit()" class="edit-button">Edit</button>
+    <button (click)="onDelete()" class="delete-button">Delete</button>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="todo-list">
+  <h2>My Todo List</h2>
+  <div class="todo-actions">
+    <input type="text" placeholder="Search todos..." [(ngModel)]="searchTerm" class="search-input">
+    <button (click)="navigateToNewTodo()" class="add-button">Add New Todo</button>
+  </div>
+  <div class="todos-container">
+    <app-todo-item
+      *ngFor="let todo of filteredTodos"
+      [todo]="todo"
+      (statusChanged)="onStatusChanged($event)"
+      (deleted)="onTodoDeleted($event)"
+    ></app-todo-item>
+  </div>
+</div>
