@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Todo } from '../../models/todo';
 import { TodoService } from '../../services/todo.service';
@@ -10,7 +10,7 @@ import { TodoItemComponent } from '../todo-item/todo-item.component';
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.scss'],
-  imports: [NgFor, NgIf, FormsModule, TodoItemComponent],
+  imports: [NgFor, FormsModule, TodoItemComponent],
   standalone: true
 })
 export class TodoListComponent implements OnInit {
